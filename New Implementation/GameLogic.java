@@ -67,7 +67,7 @@ public class GameLogic {
     }
 
     // Method to calculate the sum of a specific number in a list of dice
-    private static int calcNumScore(ArrayList<Dice> diceList, int number) {
+    public static int calcNumScore(ArrayList<Dice> diceList, int number) {
         int sum = 0;
         for (Dice dice : diceList) {
             if (dice.getValue() == number) {
@@ -78,7 +78,7 @@ public class GameLogic {
     }
 
     // Method to calculate the score for a given kind of dice (3 of a kind, 4 of a kind, etc.)
-    private static int calcSumOfAKind(ArrayList<Dice> diceList, int kind) {
+    public static int calcSumOfAKind(ArrayList<Dice> diceList, int kind) {
         int[] counts = new int[6];
         for (Dice dice : diceList) {
             counts[dice.getValue() - 1]++;
@@ -92,7 +92,7 @@ public class GameLogic {
     }
     
  // Method to calc the sum of all dice
-    private static int calcSumOfAllDice(ArrayList<Dice> diceList) {
+    public static int calcSumOfAllDice(ArrayList<Dice> diceList) {
         int sum = 0;
         for (Dice dice : diceList) {
             sum += dice.getValue();

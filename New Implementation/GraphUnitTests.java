@@ -4,8 +4,9 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-public class GameLogicTest {
-	public ArrayList<Dice> diceList;
+public class GraphUnitTests {
+	private ArrayList<Dice> diceList;
+	private GameLogic logic;
 
     @Test
     public void testSingleKind() {
@@ -15,17 +16,17 @@ public class GameLogicTest {
             diceList.get(i).setValue(i+1);
     	}
        
-        int scoreOfOne = GameLogic.calculateScoreForCategory("Ones", diceList);
+        int scoreOfOne = logic.calculateScoreForCategory("Ones", diceList);
         assertEquals(1, scoreOfOne);
-        int scoreOfTwo = GameLogic.calculateScoreForCategory("Twos", diceList);
+        int scoreOfTwo = logic.calculateScoreForCategory("Twos", diceList);
         assertEquals(2, scoreOfTwo);
-        int scoreOfThree = GameLogic.calculateScoreForCategory("Threes", diceList);
+        int scoreOfThree = logic.calculateScoreForCategory("Threes", diceList);
         assertEquals(3, scoreOfThree);
-        int scoreOfFours = GameLogic.calculateScoreForCategory("Fours", diceList);
+        int scoreOfFours = logic.calculateScoreForCategory("Fours", diceList);
         assertEquals(4, scoreOfFours);
-        int scoreOfFive = GameLogic.calculateScoreForCategory("Fives", diceList);
+        int scoreOfFive = logic.calculateScoreForCategory("Fives", diceList);
         assertEquals(5, scoreOfFive);
-        int scoreOfSixes = GameLogic.calculateScoreForCategory("Sixes", diceList);
+        int scoreOfSixes = logic.calculateScoreForCategory("Sixes", diceList);
         assertEquals(0, scoreOfSixes);
     }
 
@@ -36,7 +37,7 @@ public class GameLogicTest {
     		diceList.add(new Dice());
             diceList.get(i).setValue(2);
     	}
-        int score = GameLogic.calcSumOfAKind(diceList, 2);
+        int score = logic.calcSumOfAKind(diceList, 2);
         assertEquals(10, score);
     }
 
