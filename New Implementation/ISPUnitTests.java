@@ -32,6 +32,7 @@ public class ISPUnitTests {
 		assertTrue(main.getRollCount() == 1);
 	}
 	
+	// this test checks that the roll count works
 	@Test
     public void testRollDiceOneDice() {
         main.setRollCount(0);
@@ -39,6 +40,7 @@ public class ISPUnitTests {
         assertEquals("Roll: 1", main.getRollText());
     }
     
+	// this test checks that the roll count works
     @Test
     public void testRollDiceTwoDice() {
     	main.setRollCount(1);
@@ -46,6 +48,7 @@ public class ISPUnitTests {
         assertEquals("Roll: 2", main.getRollText());
     }
     
+    // this test checks that the roll count works
     @Test
     public void testRollDiceThreeDice() {
     	main.setRollCount(2);
@@ -53,6 +56,7 @@ public class ISPUnitTests {
         assertEquals("Roll: 3", main.getRollText());
     }
     
+    // this test checks that the roll count works and caps at 3
     @Test
     public void testRollDiceFourDice() {
     	main.setRollCount(3);
@@ -60,7 +64,7 @@ public class ISPUnitTests {
         assertTrue(3 == main.getRollCount());
     }
     
-    // Number of dice selected partition
+    // Number of dice selected partition for 0 dice
     @Test
     public void testRollDiceNoDiceSelected() {
     	main.setRollCount(1);
@@ -80,6 +84,7 @@ public class ISPUnitTests {
         assertTrue(main.getDiceList().get(4).isRollable() == true);
     }
     
+    // Number of dice selected partition for 1 dice
     @Test
     public void testRollDiceOneDiceSelected() {
     	main.setRollCount(1);
@@ -100,6 +105,7 @@ public class ISPUnitTests {
         
     }
     
+    // Number of dice selected partition for 2 dice
     @Test
     public void testRollDiceTwoDiceSelected() {
     	main.setRollCount(1);
@@ -121,6 +127,7 @@ public class ISPUnitTests {
         
     }
     
+    // Number of dice selected partition for 0 dice
     @Test
     public void testRollDiceThreeDiceSelected() {
     	main.setRollCount(1);
@@ -143,6 +150,7 @@ public class ISPUnitTests {
         
     }
     
+ // Number of dice selected partition for 4 dice
     @Test
     public void testRollDiceFourDiceSelected() {
     	main.setRollCount(1);
@@ -167,6 +175,7 @@ public class ISPUnitTests {
         
     }
     
+    // Number of dice selected partition for 5 dice
     @Test
     public void testRollDiceFiveDiceSelected() {
     	main.setRollCount(1);
@@ -192,7 +201,7 @@ public class ISPUnitTests {
         
     }
     
-    // Table value selected partition
+    // Table value selected partition for ones
     @Test
     public void testRollDiceOnes() {
     	main.setRollCount(1);
@@ -218,6 +227,7 @@ public class ISPUnitTests {
         assertEquals("5", "" + tableData[0][2]);
     }
     
+    // Table value selected partition for twos
     @Test
     public void testRollDiceTwos() {
     	main.setRollCount(1);
@@ -243,6 +253,7 @@ public class ISPUnitTests {
         assertEquals("8", "" + tableData[1][2]);
     }
     
+    // Table value selected partition for threes
     @Test
     public void testRollDiceThrees() {
     	main.setRollCount(1);
@@ -268,6 +279,7 @@ public class ISPUnitTests {
         assertEquals("3", "" + tableData[2][2]);
     }
     
+    // Table value selected partition for fours
     @Test
     public void testRollDiceFours() {
     	main.setRollCount(1);
@@ -293,6 +305,7 @@ public class ISPUnitTests {
         assertEquals("8", "" + tableData[3][2]);
     }
     
+    // Table value selected partition for fives
     @Test
     public void testRollDiceFives() {
     	main.setRollCount(1);
@@ -318,6 +331,7 @@ public class ISPUnitTests {
         assertEquals("10", "" + tableData[4][2]);
     }
     
+    // Table value selected partition for sixes
     @Test
     public void testRollDiceSixes() {
     	main.setRollCount(1);
@@ -343,6 +357,8 @@ public class ISPUnitTests {
         assertEquals("18", "" + tableData[5][2]);
     }
     
+    // Table value selected partition for three of a kind
+    // this test covers the logic class too and assumes it is correct
     @Test
     public void testRollDice3Kind() {
     	main.setRollCount(1);
@@ -369,6 +385,8 @@ public class ISPUnitTests {
         assertTrue(check == Integer.parseInt("" + tableData[8][2]));
     }
     
+    // Table value selected partition for four of a kind
+    // this test covers the logic class too and assumes it is correct
     @Test
     public void testRollDice4Kind() {
     	main.setRollCount(1);
@@ -395,6 +413,8 @@ public class ISPUnitTests {
         assertTrue(check == Integer.parseInt("" + tableData[9][2]));
     }
     
+    // Table value selected partition for a full house
+    // this test covers the logic class too and assumes it is correct
     @Test
     public void testRollDiceFullHouse() {
     	main.setRollCount(1);
@@ -421,6 +441,8 @@ public class ISPUnitTests {
         assertTrue(check == Integer.parseInt("" + tableData[10][2]));
     }
     
+    // Table value selected partition for a small straight
+    // this test covers the logic class too and assumes it is correct
     @Test
     public void testRollDiceSmallStraight() {
     	main.setRollCount(1);
@@ -447,6 +469,8 @@ public class ISPUnitTests {
         assertTrue(check == Integer.parseInt("" + tableData[11][2]));
     }
     
+    // Table value selected partition for a large straight
+    // this test covers the logic class too and assumes it is correct
     @Test
     public void testRollDiceLargeStraight() {
     	main.setRollCount(1);
@@ -473,6 +497,8 @@ public class ISPUnitTests {
         assertTrue(check == Integer.parseInt("" + tableData[12][2]));
     }
     
+    // Table value selected partition for chance
+    // this test covers the logic class too and assumes it is correct
     @Test
     public void testRollDiceChance() {
     	main.setRollCount(1);
@@ -499,6 +525,8 @@ public class ISPUnitTests {
         assertTrue(check == Integer.parseInt("" + tableData[13][2]));
     }
     
+    // Table value selected partition for yahtzee
+    // this test covers the logic class too and assumes it is correct
     @Test
     public void testRollDiceYahtzee() {
     	main.setRollCount(1);
